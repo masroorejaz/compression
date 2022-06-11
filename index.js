@@ -81,7 +81,13 @@ function compression (options) {
       }
 
       if (!this._header) {
-        this._implicitHeader()
+         try {
+          this._implicitHeader()
+        }
+
+        catch(e){
+          console.log(e);
+        }
       }
 
       return stream
@@ -100,7 +106,13 @@ function compression (options) {
           length = chunkLength(chunk, encoding)
         }
 
-        this._implicitHeader()
+         try {
+          this._implicitHeader()
+        }
+
+        catch(e){
+          console.log(e);
+        }
       }
 
       if (!stream) {
